@@ -32,18 +32,6 @@
 
 - (void)setLineGraph:(LineView *)lineChartView {
     double max = 0.f;
-//    for (NSDictionary *dic in varArray) {
-//        if (max < [[dic valueForKey:dataKey] doubleValue]) {
-//            max = [[dic valueForKey:dataKey] doubleValue];
-//        }
-//
-//        [returnArr addObject:[dic valueForKey:dataKey]];
-//        [dateArr addObject:[dic valueForKey:@"RECORD_DT"]];
-//
-//        if ([dataKey isEqualToString:@"GLUCOSE"]) {
-//            gluecoseType = [dic valueForKey:@"MEAL"];
-//        }
-//    }
     
     LineData *lineData = [[LineData alloc] init];
     lineData.min = 12.5;
@@ -51,47 +39,24 @@
     lineData.startDt = @"2017.12.01";
     lineData.endDt = @"2018.12.31";
     
-//    if ([dataKey isEqualToString:@"SYS"]) {
-        lineData.lineColor = UIColorFromRGB(0x2e89e9);
-        lineData.fillColor = UIColorFromRGB(0x007dee);
-        
-        lineData.dotImg = [UIImage imageNamed:@"imgGraphBpCir2"];
+    lineData.lineColor = UIColorFromRGB(0x2e89e9);
+    lineData.fillColor = UIColorFromRGB(0x007dee);
     
-//    } else if ([dataKey isEqualToString:@"DIA"]) {
-//        lineData.lineColor = UIColorFromRGB(0xf46a2b);
-//        lineData.fillColor = UIColorFromRGB(0xf3692b);
-//
-//        lineData.dotImg = [UIImage imageNamed:@"imgGraphBpCir1"];
-//    } else if ([dataKey isEqualToString:@"WEIGHT"]) {
-//        lineData.lineColor = UIColorFromRGB(0x35b3cb);
-//        lineData.fillColor = UIColorFromRGB(0x00acc8);
-//
-//        lineData.dotImg = [UIImage imageNamed:@"imgGraphWeightCir1"];
-//    } else if ([dataKey isEqualToString:@"BMI"]) {
-//        lineData.lineColor = UIColorFromRGB(0xa180de);
-//        lineData.fillColor = UIColorFromRGB(0x9d71e0);
-//
-//        lineData.dotImg = [UIImage imageNamed:@"imgGraphWeightCir2"];
-//    } else if ([dataKey isEqualToString:@"GLUCOSE"]) {
-//        if ([gluecoseType isEqualToString:@"B"]) {
-//            //식전
-//            lineData.lineColor = UIColorFromRGB(0x7cb3f0);
-//            lineData.fillColor = UIColorFromRGB(0x7bb3f0);
-//
-//            lineData.dotImg = [UIImage imageNamed:@"imgGraphBsBefore"];
-//        } else {
-//            //식후
-//            lineData.lineColor = UIColorFromRGB(0xf0a115);
-//            lineData.fillColor = UIColorFromRGB(0xfd9300);
-//
-//            lineData.dotImg = [UIImage imageNamed:@"imgGraphBsAfter"];
-//        }
-//    }
+    lineData.dotImg = [UIImage imageNamed:@"imgGraphBpCir2"];
     
-    lineChartView.maxValue = max+15;
-    lineChartView.lineCount = 1;
+    LineData *lineData_2 = [[LineData alloc] init];
+    lineData_2.min = 10.9;
+    lineData_2.max = 13.2;
     
-    lineChartView.lineDataArray = @[lineData];
+    lineData_2.lineColor = UIColorFromRGB(0x35b3cb);
+    lineData_2.fillColor = UIColorFromRGB(0x00acc8);
+    
+    lineData_2.dotImg = [UIImage imageNamed:@"imgGraphBpCir2"];
+    
+    lineChartView.maxValue = max+30;
+    lineChartView.lineCount = 2;
+    
+    lineChartView.lineDataArray = @[lineData, lineData_2];
     [lineChartView setNeedsDisplay];
 }
 

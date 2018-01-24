@@ -26,7 +26,7 @@
 
     CGContextRef context = UIGraphicsGetCurrentContext();
     
-    //그래프 좌우 vertical line 그리기
+    //그래프 좌/우 vertical line 그리기
     CGContextSetStrokeColorWithColor(context, UIColorFromRGB(0xe0e0e0).CGColor);
     CGContextSetLineWidth(context, 1.0f);
     
@@ -54,6 +54,7 @@
         LineData *data = [lineDataArray objectAtIndex:i];
         double max = data.max;
         double min = data.min;
+        
         max = height / maxValue * data.max + padding;
         min = height / maxValue * data.min + padding;
         
@@ -73,11 +74,20 @@
         NSMutableParagraphStyle *textStyle = [[NSMutableParagraphStyle defaultParagraphStyle] mutableCopy];
         textStyle.lineBreakMode = NSLineBreakByClipping;
         textStyle.alignment = NSTextAlignmentCenter;
-        UIFont *textFont = [UIFont systemFontOfSize:11.0];;
-
-        [data.startDt  drawInRect:CGRectMake(x, y, 48.f, h*2) withAttributes:@{NSFontAttributeName:textFont, NSParagraphStyleAttributeName:textStyle, NSForegroundColorAttributeName:UIColorFromRGB(0xc1bfbc)}];
-        [data.endDt drawInRect:CGRectMake(rightLabel.frame.origin.x - 48.f, y, 48.f, h*2) withAttributes:@{NSFontAttributeName:textFont, NSParagraphStyleAttributeName:textStyle, NSForegroundColorAttributeName:UIColorFromRGB(0xc1bfbc)}];
-
+        UIFont *textFont = [UIFont systemFontOfSize:11.0];
+        
+        NSDictionary *attributes = [NSDictionary dictionaryWithObjectsAndKeys:textFont, NSFontAttributeName, nil];
+        
+        if (data.startDt != nil && data.startDt.length > 0) {
+            CGFloat startDtWidth = [[[NSAttributedString alloc] initWithString:data.startDt attributes:attributes] size].width + 5;
+            [data.startDt  drawInRect:CGRectMake(x, y, startDtWidth, h*2) withAttributes:@{NSFontAttributeName:textFont, NSParagraphStyleAttributeName:textStyle, NSForegroundColorAttributeName:UIColorFromRGB(0xc1bfbc)}];
+        }
+        
+        if (data.endDt != nil && data.endDt.length > 0) {
+            CGFloat endDtWidth = [[[NSAttributedString alloc] initWithString:data.endDt attributes:attributes] size].width + 5;
+            [data.endDt drawInRect:CGRectMake(rightLabel.frame.origin.x - endDtWidth, y, endDtWidth, h*2) withAttributes:@{NSFontAttributeName:textFont, NSParagraphStyleAttributeName:textStyle, NSForegroundColorAttributeName:UIColorFromRGB(0xc1bfbc)}];
+        }
+        
         if (i+1 == lineCount) {
             //선 아래 투명 색상 영역
             CGContextBeginPath(context);
@@ -113,7 +123,6 @@
         CGContextDrawImage(context, CGRectMake(leftLabel.frame.origin.x - 18.f, height - min + padding - 18.f, dotImg.size.width, dotImg.size.height), dotImg.CGImage);
         CGContextDrawImage(context, CGRectMake(rightLabel.frame.origin.x - 18.f, height - max + padding - 18.f, dotImg.size.width, dotImg.size.height), dotImg.CGImage);
 
-        
         NSMutableParagraphStyle *leftTextStyle = [[NSMutableParagraphStyle defaultParagraphStyle] mutableCopy];
         leftTextStyle.lineBreakMode = NSLineBreakByClipping;
         leftTextStyle.alignment = NSTextAlignmentRight;

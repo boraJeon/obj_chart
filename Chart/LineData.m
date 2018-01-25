@@ -15,7 +15,8 @@
 @synthesize lineColor;
 @synthesize fillColor;
 @synthesize dotImg;
-@synthesize startDt;
-@synthesize endDt;
+
+@synthesize minTitle;
+@synthesize maxTitle;
 
 @end

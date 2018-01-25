@@ -19,7 +19,7 @@
 
 @property (nonatomic, strong) UIImage *dotImg;
 
-@property (nonatomic, strong) NSString *startDt;
-@property (nonatomic, strong) NSString *endDt;
+@property (nonatomic, strong) NSString *minTitle;
+@property (nonatomic, strong) NSString *maxTitle;
 
 @end

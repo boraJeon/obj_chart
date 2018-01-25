@@ -15,6 +15,7 @@
 
 @synthesize maxValue;
 @synthesize lineCount, lineDataArray;
+@synthesize startDt, endDt;
 
 // Only override drawRect: if you perform custom drawing.
 // An empty implementation adversely affects performance during animation.
@@ -78,14 +79,14 @@
         
         NSDictionary *attributes = [NSDictionary dictionaryWithObjectsAndKeys:textFont, NSFontAttributeName, nil];
         
-        if (data.startDt != nil && data.startDt.length > 0) {
-            CGFloat startDtWidth = [[[NSAttributedString alloc] initWithString:data.startDt attributes:attributes] size].width + 5;
-            [data.startDt  drawInRect:CGRectMake(x, y, startDtWidth, h*2) withAttributes:@{NSFontAttributeName:textFont, NSParagraphStyleAttributeName:textStyle, NSForegroundColorAttributeName:UIColorFromRGB(0xc1bfbc)}];
+        if (self.startDt != nil && self.startDt.length > 0) {
+            CGFloat startDtWidth = [[[NSAttributedString alloc] initWithString:self.startDt attributes:attributes] size].width + 5;
+            [self.startDt  drawInRect:CGRectMake(x, y, startDtWidth, h*2) withAttributes:@{NSFontAttributeName:textFont, NSParagraphStyleAttributeName:textStyle, NSForegroundColorAttributeName:UIColorFromRGB(0xc1bfbc)}];
         }
         
-        if (data.endDt != nil && data.endDt.length > 0) {
-            CGFloat endDtWidth = [[[NSAttributedString alloc] initWithString:data.endDt attributes:attributes] size].width + 5;
-            [data.endDt drawInRect:CGRectMake(rightLabel.frame.origin.x - endDtWidth, y, endDtWidth, h*2) withAttributes:@{NSFontAttributeName:textFont, NSParagraphStyleAttributeName:textStyle, NSForegroundColorAttributeName:UIColorFromRGB(0xc1bfbc)}];
+        if (self.endDt != nil && self.endDt.length > 0) {
+            CGFloat endDtWidth = [[[NSAttributedString alloc] initWithString:self.endDt attributes:attributes] size].width + 5;
+            [self.endDt drawInRect:CGRectMake(rightLabel.frame.origin.x - endDtWidth, y, endDtWidth, h*2) withAttributes:@{NSFontAttributeName:textFont, NSParagraphStyleAttributeName:textStyle, NSForegroundColorAttributeName:UIColorFromRGB(0xc1bfbc)}];
         }
         
         if (i+1 == lineCount) {
@@ -132,8 +133,8 @@
         rightTextStyle.alignment = NSTextAlignmentLeft;
 
         //y축 글씨 표시
-        self.minStr = @"yMin";
-        self.maxStr = @"xMin";
+        self.minStr = data.minTitle;
+        self.maxStr = data.maxTitle;
                 
         y = height - min + padding - 7.5f;
         [self.minStr drawInRect:CGRectMake(leftLabel.frame.origin.x - (28.f + 15.f), y, 28.f, h) withAttributes:@{NSFontAttributeName:textFont, NSParagraphStyleAttributeName:leftTextStyle, NSForegroundColorAttributeName:UIColorFromRGB(0xc1bfbc)}];

@@ -21,4 +21,7 @@
 @property (nonatomic, weak) NSString *minStr;
 @property (nonatomic, weak) NSString *maxStr;
 
+@property (nonatomic, strong) NSString *startDt;
+@property (nonatomic, strong) NSString *endDt;
+
 @end

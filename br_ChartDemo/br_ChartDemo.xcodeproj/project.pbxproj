@@ -20,6 +20,7 @@
 		04E011C92017325A00F99F01 /* LineChartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E011C82017325A00F99F01 /* LineChartViewController.m */; };
 		9BEC706D201858A6000FFBC8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9BEC706C201858A6000FFBC8 /* Main.storyboard */; };
 		9BEC706F201859D8000FFBC8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9BEC706E201859D8000FFBC8 /* LaunchScreen.storyboard */; };
+		9BEC7072201B0C88000FFBC8 /* CurveChartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BEC7071201B0C88000FFBC8 /* CurveChartViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +67,8 @@
 		04E011C82017325A00F99F01 /* LineChartViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LineChartViewController.m; sourceTree = "<group>"; };
 		9BEC706C201858A6000FFBC8 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		9BEC706E201859D8000FFBC8 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		9BEC7070201B0C88000FFBC8 /* CurveChartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CurveChartViewController.h; sourceTree = "<group>"; };
+		9BEC7071201B0C88000FFBC8 /* CurveChartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CurveChartViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +128,8 @@
 				04E011912017105000F99F01 /* Assets.xcassets */,
 				04E011962017105000F99F01 /* Info.plist */,
 				04E011972017105000F99F01 /* main.m */,
+				9BEC7070201B0C88000FFBC8 /* CurveChartViewController.h */,
+				9BEC7071201B0C88000FFBC8 /* CurveChartViewController.m */,
 				04E011C72017325A00F99F01 /* LineChartViewController.h */,
 				04E011C82017325A00F99F01 /* LineChartViewController.m */,
 				9BEC706E201859D8000FFBC8 /* LaunchScreen.storyboard */,
@@ -299,6 +304,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9BEC7072201B0C88000FFBC8 /* CurveChartViewController.m in Sources */,
 				04E0118D2017105000F99F01 /* ViewController.m in Sources */,
 				04E011982017105000F99F01 /* main.m in Sources */,
 				04E011C6201711A100F99F01 /* LineView.m in Sources */,

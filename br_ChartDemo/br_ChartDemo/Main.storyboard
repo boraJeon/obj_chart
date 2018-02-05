@@ -59,6 +59,24 @@
             </objects>
             <point key="canvasLocation" x="-183" y="-1"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="HbA-Tx-INM">
+            <objects>
+                <viewController id="Ujc-Mu-tUU" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jJk-dE-qU7"/>
+                        <viewControllerLayoutGuide type="bottom" id="UQx-T5-bJm"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="5PD-Z1-zxW">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OdW-tu-HrP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="577" y="366"/>
+        </scene>
         <!--Line Chart-->
         <scene sceneID="vXS-IP-nEh">
             <objects>
